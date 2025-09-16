@@ -3,7 +3,16 @@ pipeline {
     stages {
         stage ("Build") {
             steps {
-                sh 'docker build -t shaikmustafa/abinay:train .'
+                sh 'docker build -t adinarayana25/myrepo:train .'
+            }
+        }
+         stage('Push') {
+            steps {
+               script{
+                   withDockerRegistry(credentialsId: 'docker-credientials', url: 'https://github.com/adiduggempudi/multibranch-pipeline.git') {
+                              sh 'docker push adinarayana25/myrepo:train'
+                       }
+               }
             }
         }
         stage ("Deploy") {
