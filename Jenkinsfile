@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage ("Build") {
+        stage ('Build') {
             steps {
                 sh 'docker build -t image3 .'
             }
@@ -20,9 +20,9 @@ pipeline {
                }
             }
         }
-        stage ("Deploy") {
+        stage ('Deploy') {
             steps {
-                sh 'docker run -itd --name bank2 -p 4455:80 shaikmustafa/abinay:bank'
+                sh 'docker run -itd --name bank2 -p 4455:80 adinarayana25/myrepo:bank'
             }
         }
     }
