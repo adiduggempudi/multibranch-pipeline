@@ -3,7 +3,12 @@ pipeline {
     stages {
         stage ("Build") {
             steps {
-                sh 'docker build -t adinarayana25/myrepo:train .'
+                sh 'docker build -t image5 .'
+            }
+        }
+        stage('Tag'){
+            steps{
+                sh 'docker tag image5 adinarayana25/myrepo:train '
             }
         }
          stage('Push') {
