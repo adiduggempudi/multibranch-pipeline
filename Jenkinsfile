@@ -14,8 +14,8 @@ pipeline {
          stage('Push') {
             steps {
                script{
-                   withDockerRegistry(credentialsId: 'docker-credientials', url: 'https://github.com/adiduggempudi/multibranch-pipeline.git') {
-                              sh 'docker push adinarayana25/myrepo:bank'
+                   withDockerRegistry(credentialsId: 'dockerhub-credientials') {
+                         sh 'docker push adinarayana25/myrepo:bank '
                        }
                }
             }
