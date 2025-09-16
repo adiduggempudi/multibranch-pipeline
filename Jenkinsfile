@@ -22,7 +22,7 @@ pipeline {
         }
         stage ("Deploy") {
             steps {
-                sh 'docker run -itd --name train -p 9999:80 shaikmustafa/abinay:train'
+                sh 'docker run -itd --name train -p 9999:80 adinarayana25/myrepo:train'
             }
         }
     }
